@@ -5,10 +5,6 @@ import mysql.connector
 from sklearn.cluster import KMeans
 
 def get_connection():
-    """
-    Create and return a MySQL connection.
-    Change host, user, password, and database as per your setup.
-    """
     return mysql.connector.connect(
         host="localhost",       
         user="root",            
@@ -95,3 +91,4 @@ if kmeans and not df.empty:
 if not df.empty:
     st.subheader("📄 Customer Data")
     st.dataframe(df)
+
