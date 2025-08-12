@@ -10,12 +10,13 @@ def get_connection():
         user="root",            
         password="101003",
         database="customer_db"  
+        
     )
 
 def load_customers():
     
     conn = get_connection()
-    df = pd.read_sql("SELECT * FROM customers", conn)
+    df = pd.read_sql("SELECT * FROM customer", conn)
     conn.close()
     return df
 
@@ -91,4 +92,3 @@ if kmeans and not df.empty:
 if not df.empty:
     st.subheader("📄 Customer Data")
     st.dataframe(df)
-
